@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admission Certificate</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+
+<body>
+
+<div id="pdfArea" class="cert-wrapper">
+
+  <!-- TOP HEADER -->
+  <div class="top-header">
+    <img src="logo.png" class="main-logo">
+    <h1>GLOBAL ENGLISH LANGUAGE INSTITUTE</h1>
+    <p>THE PLACE OF FUTURE LEADERS</p>
+  </div>
+
+  <!-- PHOTO + REG BOX -->
+  <div class="side-box">
+    <img id="photo" class="student-img">
+    <div class="reg-box">REG NO<br><b id="regNo"></b></div>
+  </div>
+
+  <!-- TITLE -->
+  <h2 class="slip-title">Admission Slip</h2>
+  <h1 id="statusText" class="status"></h1>
+
+  <!-- DATA TABLE -->
+  <div class="table-box" id="dataBox"></div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div>
+      📍 Main Campus: Bibi Ziyarat Town Saryab Road Quetta<br>
+      📍 Kashmirabad Campus: Near Siamari Bridge Qambarani Road Quetta
+    </div>
+
+    <div>
+      📞 WhatsApp: +92 330 5588331
+    </div>
+  </div>
+
+  <button onclick="downloadPDF()" class="download">Download PDF</button>
+
+</div>
+
+<script>
+
+const data = JSON.parse(sessionStorage.getItem("finalStudent"));
+
+if (data) {
+
+  const status = document.getElementById("statusText");
+  status.innerText = "✅ Congratulations! Application Submitted";
+
+  // FIXED PHOTO PATH
+  document.getElementById("photo").src = data.photo ? "/uploads/" + data.photo : "";
+
+  // FIXED REG NUMBER
+  let reg = sessionStorage.getItem("regNo");
+  if (!reg) {
+    reg = "GEI-" + Math.floor(1000 + Math.random()*9000);
+    sessionStorage.setItem("regNo", reg);
+  }
+  document.getElementById("regNo").innerText = reg;
+
+  // FIXED DATA
+  document.getElementById("dataBox").innerHTML = `
+    ${row("Name", data.name)}
+    ${row("Father Name", data.fatherName)}
+    ${row("Contact Number", data.contact)}
+    ${row("WhatsApp", data.whatsapp)}
+    ${row("Email", data.email)}
+    ${row("Gender", data.gender)}
+    ${row("Course", data.course)}
+    ${row("Campus", data.campus)}
+    ${row("CNIC", data.cnic)}
+    ${row("Date of Birth", data.dob)}
+  `;
+}
+
+function row(label, value){
+  return `
+    <div class="row">
+      <div class="label">${label}</div>
+      <div class="value">${value}</div>
+    </div>
+  `;
+}
+
+function downloadPDF() {
+  html2pdf().from(document.getElementById("pdfArea")).save("Admission_Certificate.pdf");
+}
+
+</script>
+
+</body>
+</html>

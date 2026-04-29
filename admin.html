@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - Payment Verification</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .admin-wrapper {
+      padding: 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .student-card {
+      background: rgba(0, 0, 0, 0.8);
+      border: 2px solid gold;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 15px 0;
+      display: grid;
+      gap: 15px;
+    }
+
+    .card-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .info-box {
+      background: rgba(212, 175, 55, 0.1);
+      padding: 12px;
+      border-radius: 8px;
+      border-left: 4px solid gold;
+    }
+
+    .info-label {
+      color: gold;
+      font-weight: bold;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    .info-value {
+      color: white;
+      font-size: 16px;
+      margin-top: 5px;
+    }
+
+    .screenshot-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .screenshot-img {
+      max-width: 100%;
+      border: 2px solid gold;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-approve {
+      flex: 1;
+      padding: 12px;
+      background: linear-gradient(135deg, #4caf50, #45a049);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .btn-approve:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+    }
+
+    .btn-reject {
+      flex: 1;
+      padding: 12px;
+      background: linear-gradient(135deg, #f44336, #da190b);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .btn-reject:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(244, 67, 54, 0.4);
+    }
+
+    .status-badge {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 12px;
+    }
+
+    .status-pending {
+      background: rgba(255, 193, 7, 0.2);
+      color: #ffc107;
+    }
+
+    .status-approved {
+      background: rgba(76, 175, 80, 0.2);
+      color: #4caf50;
+    }
+
+    .status-rejected {
+      background: rgba(244, 67, 54, 0.2);
+      color: #f44336;
+    }
+
+    .filter-section {
+      margin-bottom: 20px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 8px 15px;
+      background: rgba(212, 175, 55, 0.2);
+      border: 2px solid gold;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .filter-btn.active {
+      background: gold;
+      color: black;
+    }
+
+    @media (max-width: 768px) {
+      .card-header {
+        grid-template-columns: 1fr;
+      }
+
+      .screenshot-section {
+        grid-template-columns: 1fr;
+      }
+
+      .actions {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="admin-wrapper">
+
+  <h2 class="apply">💳 Admin Panel - Payment Verification</h2>
+
+  <div class="filter-section">
+    <button class="filter-btn active" onclick="filterStudents('all')">All</button>
+    <button class="filter-btn" onclick="filterStudents('pending-verification')">Pending Verification</button>
+    <button class="filter-btn" onclick="filterStudents('approved')">✅ Approved</button>
+    <button class="filter-btn" onclick="filterStudents('rejected')">❌ Rejected</button>
+  </div>
+
+  <div id="studentsContainer"></div>
+
+</div>
+
+<script src="admin.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,905 @@
+/* ========================= */
+/* GLOBAL STYLES */
+/* ========================= */
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: white;
+
+  background:
+    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)),
+    url("students.JPEG");
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* ========================= */
+/* HEADER */
+/* ========================= */
+
+.header {
+  text-align: center;
+  padding: 20px;
+}
+
+.logo {
+  width: 200px;
+}
+
+.header h1 {
+  color: gold;
+  margin: 10px 0 5px;
+  font-size: 50px;
+}
+
+.header p {
+  color: #ddd;
+  font-size: 25px;
+}
+
+/* ========================= */
+/* FORM */
+/* ========================= */
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+form {
+  width: 100%;
+  max-width: 800px;
+}
+
+/* APPLY TEXT */
+.apply {
+  text-align: center;
+  color: gold;
+  margin-bottom: 15px;
+  font-size: 28px;
+}
+
+/* INPUTS */
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+
+  background: rgba(0,0,0,0.6);
+  border: 2px solid gold;
+  border-radius: 8px;
+  color: white;
+  font-size: 15px;
+}
+
+input:focus, select:focus {
+  outline: none;
+  box-shadow: 0 0 10px gold;
+}
+
+/* ========================= */
+/* COURSES */
+/* ========================= */
+
+.courses {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.course-btn {
+  flex: 1;
+  padding: 10px;
+  background: black;
+  border: 2px solid gold;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.course-btn:hover {
+  background: gold;
+  color: black;
+}
+
+/* ========================= */
+/* GENDER */
+/* ========================= */
+
+.gender {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 0;
+}
+
+.gender input {
+  accent-color: gold;
+}
+
+/* FILE */
+.file-label {
+  color: gold;
+}
+
+/* ========================= */
+/* BUTTONS */
+/* ========================= */
+
+.btn-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+button {
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.main-btn {
+  width: 1300px;
+  height: 60px;
+  background: gold;
+  color: black;
+  font-size: 25px;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.main-btn:hover {
+  background: #e6c200;
+}
+
+.pay-btn {
+  flex: 1;
+  background: black;
+  color: gold;
+  border: 2px solid gold;
+}
+
+.pay-btn:hover {
+  background: gold;
+  color: black;
+}
+
+/* ========================= */
+/* CERTIFICATE WRAPPER */
+/* ========================= */
+
+.cert-wrapper {
+  max-width: 950px;
+  margin: 30px auto;
+  padding: 30px;
+
+  background: #fff8e6;
+  border: 10px solid #111;
+  box-shadow: 0 0 40px gold;
+
+  position: relative;
+  color: black;
+}
+
+/* TOP HEADER */
+.top-header {
+  text-align: center;
+}
+
+.main-logo {
+  width: 80px;
+}
+
+.top-header h1 {
+  margin: 10px 0;
+}
+
+.top-header p {
+  color: #444;
+}
+
+/* SIDE BOX */
+.side-box {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  text-align: center;
+}
+
+.student-img {
+  width: 120px;
+  height: 140px;
+  object-fit: cover;
+  border: 3px solid gold;
+}
+
+.reg-box {
+  margin-top: 10px;
+  padding: 5px;
+  border: 2px solid black;
+}
+
+/* TITLE */
+.slip-title {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.status {
+  text-align: center;
+  color: green;
+}
+
+/* ========================= */
+/* DATA TABLE */
+/* ========================= */
+
+.table-box {
+  margin-top: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 8px 0;
+
+  border: 1px solid gold;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.value {
+  color: #333;
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+.footer {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+/* DOWNLOAD BUTTON */
+.download {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: gold;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* ========================= */
+/* SLIP PAGE */
+/* ========================= */
+
+.slip-container {
+  padding: 30px;
+  text-align: center;
+}
+
+/* CARD */
+.card {
+  max-width: 800px;
+  margin: auto;
+  padding: 30px;
+
+  background: rgba(0,0,0,0.7);
+  border: 2px solid gold;
+  border-radius: 15px;
+
+  box-shadow: 0 0 25px gold;
+  position: relative;
+}
+
+/* PHOTO */
+.student-photo {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+
+  border: 3px solid gold;
+  border-radius: 10px;
+}
+
+/* DATA BOX */
+.data-box {
+  margin-top: 140px;
+}
+
+/* ========================= */
+/* CERTIFICATE (ALT DESIGN) */
+/* ========================= */
+
+.certificate {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 30px;
+
+  background: linear-gradient(#fff8e6, #fff);
+  border: 8px solid gold;
+
+  box-shadow: 0 0 40px gold;
+  color: black;
+  position: relative;
+}
+
+/* HEADER */
+.cert-header {
+  text-align: center;
+}
+
+.cert-logo {
+  width: 90px;
+}
+
+.cert-header h1 {
+  margin: 10px 0;
+}
+
+.tagline {
+  color: #444;
+  font-size: 14px;
+}
+
+/* PHOTO */
+.photo-box {
+  position: absolute;
+  right: 30px;
+  top: 150px;
+}
+
+.photo-box img {
+  width: 130px;
+  height: 150px;
+  object-fit: cover;
+  border: 3px solid gold;
+}
+
+/* TITLES */
+.cert-title {
+  text-align: center;
+  font-size: 28px;
+  margin-top: 20px;
+}
+
+.main-title {
+  text-align: center;
+  color: #b30000;
+  font-size: 36px;
+  margin: 10px 0;
+}
+
+/* BODY */
+.cert-body {
+  margin-top: 30px;
+}
+
+.line {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 15px;
+  margin: 8px 0;
+
+  border: 1px solid gold;
+  border-radius: 6px;
+
+  background: rgba(255,255,255,0.9);
+  font-size: 16px;
+}
+
+.line span {
+  font-weight: bold;
+}
+
+/* FOOTER */
+.cert-footer {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+/* ========================= */
+/* TABLE (ADMIN) */
+/* ========================= */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid gold;
+}
+
+th {
+  background: gold;
+  color: black;
+}
+
+td {
+  background: rgba(0,0,0,0.7);
+  color: white;
+}
+
+/* ========================= */
+/* MOBILE RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 1200px) {
+  .main-btn {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* HEADER */
+  .header {
+    padding: 15px;
+  }
+
+  .logo {
+    width: 150px;
+  }
+
+  .header h1 {
+    font-size: 32px;
+    margin: 8px 0 3px;
+  }
+
+  .header p {
+    font-size: 18px;
+  }
+
+  /* CONTAINER */
+  .container {
+    padding: 12px;
+  }
+
+  form {
+    max-width: 100%;
+  }
+
+  /* APPLY TEXT */
+  .apply {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+
+  /* INPUTS */
+  input, select {
+    padding: 10px;
+    margin: 8px 0;
+    font-size: 14px;
+  }
+
+  /* COURSES */
+  .courses {
+    gap: 8px;
+    margin: 8px 0;
+  }
+
+  .course-btn {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  /* GENDER */
+  .gender {
+    margin: 8px 0;
+  }
+
+  /* BUTTONS */
+  button {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .main-btn {
+    width: 100%;
+    height: auto;
+    padding: 12px;
+    font-size: 16px;
+    margin-top: 8px;
+  }
+
+  /* CERTIFICATE */
+  .cert-wrapper {
+    max-width: 100%;
+    margin: 15px;
+    padding: 20px;
+    border-width: 6px;
+  }
+
+  .main-logo {
+    width: 60px;
+  }
+
+  .top-header h1 {
+    font-size: 20px;
+    margin: 8px 0;
+  }
+
+  .top-header p {
+    font-size: 12px;
+  }
+
+  .side-box {
+    position: static;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .student-img {
+    width: 100px;
+    height: 120px;
+  }
+
+  .slip-title {
+    font-size: 18px;
+    margin-top: 15px;
+  }
+
+  .status {
+    font-size: 18px;
+  }
+
+  .row {
+    flex-direction: column;
+    padding: 8px;
+    margin: 6px 0;
+    font-size: 13px;
+  }
+
+  .label {
+    margin-bottom: 4px;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 12px;
+    font-size: 12px;
+    margin-top: 20px;
+  }
+
+  .download {
+    width: 100%;
+    padding: 12px;
+  }
+
+  /* TABLE */
+  table {
+    font-size: 12px;
+  }
+
+  th, td {
+    padding: 8px 5px;
+  }
+
+  /* ADMIN PANEL */
+  .admin-wrapper {
+    padding: 12px;
+  }
+
+  .student-card {
+    padding: 15px;
+    margin: 12px 0;
+  }
+
+  .card-header {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .screenshot-section {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .btn-approve, .btn-reject {
+    padding: 10px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 0;
+  }
+
+  /* HEADER */
+  .header {
+    padding: 10px;
+  }
+
+  .logo {
+    width: 120px;
+  }
+
+  .header h1 {
+    font-size: 24px;
+    margin: 6px 0 2px;
+  }
+
+  .header p {
+    font-size: 14px;
+  }
+
+  /* CONTAINER */
+  .container {
+    padding: 8px;
+  }
+
+  .apply {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  /* INPUTS */
+  input, select {
+    padding: 8px;
+    margin: 6px 0;
+    font-size: 13px;
+  }
+
+  /* COURSES */
+  .courses {
+    flex-direction: column;
+    gap: 6px;
+    margin: 6px 0;
+  }
+
+  .course-btn {
+    padding: 10px;
+    font-size: 12px;
+    width: 100%;
+  }
+
+  /* GENDER */
+  .gender {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin: 8px 0;
+  }
+
+  .gender label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  /* BUTTONS */
+  button {
+    padding: 10px;
+    font-size: 12px;
+    min-height: 44px;
+  }
+
+  .main-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    margin-top: 8px;
+    min-height: 44px;
+  }
+
+  .pay-btn {
+    width: 100%;
+  }
+
+  /* CERTIFICATE */
+  .cert-wrapper {
+    margin: 8px;
+    padding: 15px;
+    border-width: 4px;
+  }
+
+  .main-logo {
+    width: 50px;
+  }
+
+  .top-header h1 {
+    font-size: 16px;
+    margin: 6px 0;
+  }
+
+  .top-header p {
+    font-size: 11px;
+  }
+
+  .side-box {
+    margin-top: 15px;
+  }
+
+  .student-img {
+    width: 80px;
+    height: 100px;
+  }
+
+  .slip-title {
+    font-size: 16px;
+    margin-top: 12px;
+  }
+
+  .status {
+    font-size: 16px;
+  }
+
+  .row {
+    padding: 6px;
+    margin: 5px 0;
+    font-size: 12px;
+    gap: 5px;
+  }
+
+  .footer {
+    gap: 8px;
+    font-size: 11px;
+    margin-top: 15px;
+  }
+
+  .download {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  /* TABLE */
+  table {
+    font-size: 10px;
+  }
+
+  th, td {
+    padding: 6px 3px;
+  }
+
+  /* ADMIN */
+  .admin-wrapper {
+    padding: 8px;
+  }
+
+  .student-card {
+    padding: 12px;
+    margin: 10px 0;
+    gap: 12px;
+  }
+
+  .card-header {
+    gap: 10px;
+  }
+
+  .info-box {
+    padding: 10px;
+  }
+
+  .info-label {
+    font-size: 11px;
+  }
+
+  .info-value {
+    font-size: 14px;
+    margin-top: 3px;
+  }
+
+  .screenshot-section {
+    gap: 12px;
+  }
+
+  .btn-approve, .btn-reject {
+    padding: 10px;
+    font-size: 12px;
+    min-height: 44px;
+  }
+
+  .filter-btn {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .section-title {
+    font-size: 14px;
+    margin: 15px 0 10px 0;
+  }
+
+  /* PAYMENT */
+  .payment-container {
+    padding: 15px 12px;
+    margin: 0;
+    border-radius: 10px;
+  }
+
+  .payment-methods {
+    gap: 12px;
+    margin: 15px 0;
+  }
+
+  .payment-method-btn {
+    padding: 12px;
+    font-size: 13px;
+  }
+
+  .payment-details {
+    padding: 10px;
+  }
+
+  .detail-text {
+    font-size: 11px;
+    margin: 5px 0;
+  }
+
+  .cash-info {
+    padding: 10px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 360px) {
+  .header h1 {
+    font-size: 20px;
+  }
+
+  .apply {
+    font-size: 16px;
+  }
+
+  .main-btn {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  input, select {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  button {
+    min-height: 40px;
+    padding: 8px;
+  }
+
+  .cert-wrapper {
+    margin: 5px;
+    padding: 12px;
+  }
+
+  .row {
+    font-size: 11px;
+  }
+
+  /* ENSURE NO HORIZONTAL SCROLL */
+  * {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}

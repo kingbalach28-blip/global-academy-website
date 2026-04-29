@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Global English Language Institute</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<div class="header">
+  <img src="logo.png" class="logo" alt="Institute Logo">
+  <h1>Global English Language Institute</h1>
+  <p>Admission Form</p>
+</div>
+
+<!-- ================= FORM ================= -->
+<div class="container">
+
+  <form id="form" enctype="multipart/form-data">
+
+    <h2 class="apply">Apply Now</h2>
+
+    <!-- BASIC INFO -->
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="text" id="father" placeholder="Father's Name" required>
+
+    <input type="text" id="contact" placeholder="Contact Number (11 digits)" maxlength="11" required>
+    <input type="text" id="whatsapp" placeholder="WhatsApp Number (11 digits)" maxlength="11">
+
+    <input type="email" id="email" placeholder="Email Address">
+
+    <input type="text" id="cnic" placeholder="CNIC Number" required>
+
+    <!-- GENDER -->
+    <div class="gender">
+      <label>
+        <input type="radio" name="gender" value="Male"> Male
+      </label>
+
+      <label>
+        <input type="radio" name="gender" value="Female"> Female
+      </label>
+    </div>
+
+    <!-- COURSE SELECTION -->
+    <div class="courses">
+      <button type="button" class="course-btn" onclick="selectCourse('Computer', event)">Computer</button>
+<button type="button" class="course-btn" onclick="selectCourse('Tuition', event)">Tuition</button>
+<button type="button" class="course-btn" onclick="selectCourse('English', event)">English</button>
+<button type="button" class="course-btn" onclick="selectCourse('Special', event)">Special</button>
+    </div>
+
+    <select id="subCourse" required>
+      <option value="">Select Course Detail</option>
+    </select>
+
+    <!-- CAMPUS SELECTION -->
+    <label style="color: gold; display: block; margin: 15px 0 10px; font-weight: bold;">SELECT CAMPUS</label>
+    <div class="courses">
+      <button type="button" class="course-btn" onclick="selectCampus('MAIN CAMPUS, BIBI ZIYARAT TOWN QUETTA', event)">MAIN CAMPUS, BIBI ZIYARAT TOWN QUETTA</button>
+      <button type="button" class="course-btn" onclick="selectCampus('KASHMIRABAD CAMPUS, NEAR SIAMARI BRIDGE QUETTA', event)">KASHMIRABAD CAMPUS, NEAR SIAMARI BRIDGE QUETTA</button>
+    </div>
+
+    <!-- PERSONAL INFO -->
+    <input type="date" id="dob" required>
+
+    <!-- PHOTO -->
+    <label class="file-label">Upload Passport Size Picture</label>
+    <input type="file" id="photo" accept="image/*">
+
+    <!-- BUTTONS -->
+    <div class="btn-group">
+    
+      <button type="submit" class="main-btn">
+        ✅ Submit Application
+      </button>
+
+    </div>
+
+  </form>
+
+</div>
+
+<!-- CONTACT INFO -->
+<p style="color: gold; text-align: center; font-size: 16px; margin-top: 30px;">
+  <strong>Contact Us:</strong><br>
+  WhatsApp Number: +92 330 5588331<br>
+  Email: globalacademy2026@gmail.com
+</p>
+
+<!-- ================= JS ================= -->
+<script src="style.css"></script>
+
+<!-- ERROR HANDLING -->
+<script>
+  const params = new URLSearchParams(window.location.search);
+
+  if (params.get("error") === "already") {
+    alert("⚠️ You have already applied with this CNIC!");
+
+    window.history.replaceState({}, document.title, "/");
+  }
+</script>
+<script src="script.js" defer></script>
+</body>
+</html>

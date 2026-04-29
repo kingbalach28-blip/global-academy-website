@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fee Payment</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="payment-wrapper">
+  <div class="payment-container">
+
+    <h2 class="apply">Fee Payment</h2>
+    <h1 class="amount">💳 Pay 1800 Rs</h1>
+
+    <!-- PAYMENT METHODS -->
+    <div class="payment-methods">
+      
+      <!-- EASYPAISA BUTTON -->
+      <div class="payment-method-group">
+        <button type="button" onclick="selectMethod('Easypaisa', event)" class="payment-method-btn easypaisa-btn">
+          <span class="method-name">Easypaisa</span>
+        </button>
+        <div class="payment-details" id="easypaisa-details" style="display:none;">
+          <p class="detail-text">💰 Pay 1800 Rs</p>
+          <p class="detail-text">📱 To: +92 330 5588331</p>
+        </div>
+      </div>
+
+      <!-- JAZZCASH BUTTON -->
+      <div class="payment-method-group">
+        <button type="button" onclick="selectMethod('JazzCash', event)" class="payment-method-btn jazzcash-btn">
+          <span class="method-name">JazzCash</span>
+        </button>
+        <div class="payment-details" id="jazzcash-details" style="display:none;">
+          <p class="detail-text">💰 Pay 1800 Rs</p>
+          <p class="detail-text">📱 To: +92 330 5588331</p>
+        </div>
+      </div>
+
+      <!-- CASH BUTTON -->
+      <div class="payment-method-group">
+        <button type="button" onclick="selectMethod('Cash', event)" class="payment-method-btn cash-btn">
+          <span class="method-name">💵 Cash</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- CLICK TO PAY BUTTON (Hidden until method selected) -->
+    <button 
+      id="clickToPayBtn" 
+      type="button" 
+      onclick="clickToPay()" 
+      class="main-btn pay-btn"
+      style="display:none;"
+    >
+      Click To Pay
+    </button>
+
+    <!-- SCREENSHOT UPLOAD SECTION (Hidden for Cash) -->
+    <div id="screenshotSection" style="display:none;">
+      <h3 class="section-title">📸 Upload Payment Screenshot</h3>
+      <label class="file-label">Select Image:</label>
+      <input type="file" id="screenshot" accept="image/*" class="file-input">
+      <p class="hint-text">Please upload a clear screenshot of your payment confirmation</p>
+
+      <!-- SUBMIT -->
+      <button 
+        id="submitBtn" 
+        type="button" 
+        onclick="submitPayment()" 
+        class="main-btn submit-btn"
+      >
+        Submit Payment
+      </button>
+    </div>
+
+    <!-- CASH PAYMENT MESSAGE -->
+    <div id="cashMessage" style="display:none;">
+      <p class="cash-info">✅ Cash payment selected. Please visit our campus with this form to complete payment.</p>
+      <button 
+        id="cashSubmitBtn" 
+        type="button" 
+        onclick="submitCashPayment()" 
+        class="main-btn submit-btn"
+      >
+        Confirm & Continue
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<script src="payment.js"></script>
+
+</body>
+</html>
